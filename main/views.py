@@ -37,7 +37,7 @@ class ProductViewSet(ModelViewSet):
         queryset = self.get_queryset() # Product.objects.all()
         if q:
             # queryset = queryset.filter(title__icontains=q) # title ilike '%hello%'
-            queryset = queryset.filter(Q(title__icontains=q) | Q(description__icontains=q))
+            queryset = queryset.filter(Q(title__icontains=q))
             # title ilike '%hello%' or description ilike '%hello%'
         # get_serializer - ProductSerializer
 
